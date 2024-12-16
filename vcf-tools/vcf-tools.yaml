@@ -4,7 +4,7 @@ workflow:
   steps:
     - name: Calculate frequencies
       type: docker
-      image: biocontainers/vcftools
+      image: biocontainers/vcftools:0.1.14--5
       cmd:  vcftools --gzvcf $vcf --freq --out $output
       stdout: true
   inputs:
