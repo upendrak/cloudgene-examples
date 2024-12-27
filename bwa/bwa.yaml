@@ -3,12 +3,25 @@ name: BWA
 version: 0.7.3a--h577a1d6_10
 workflow:
   steps:
-    - name: Running BWA
+    - name: Indexing BWA
       type: docker
       image: quay.io/biocontainers/bwa:0.7.3a--h577a1d6_10
       cmd: bwa index ${reference}
+   - name: Fast-mapping BWA
+      type: docker
+      image: quay.io/biocontainers/bwa:0.7.3a--h577a1d6_10
+      cmd: bwa fastmap ${reference} ${fastq} > ${output}
   inputs:
     - id: reference
       description: Fasta file
       type: local-file
       accept: .fasta,.fa
+    - id: fastq
+      description: Fastq file
+      type: local-file
+      accept: .fastq,.fq
+  outputs:
+    - id: output
+      description: BWA matches File
+      type: local-folder
+      download: true
