@@ -5,7 +5,7 @@ workflow:
   steps:
     - name: Running BWA
       type: docker
-      image: 
+      image: quay.io/biocontainers/bwa:0.7.3a--h577a1d6_10
       cmd: bwa index ${reference}
   inputs:
     - id: reference
