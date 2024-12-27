@@ -13,7 +13,7 @@ workflow:
       cmd: bwa fastmap ${reference} ${fastq} > ${output}
   inputs:
     - id: reference
-      description: Fasta file
+      description: Reference file
       type: local-file
       accept: .fasta,.fa
     - id: fastq
@@ -23,5 +23,5 @@ workflow:
   outputs:
     - id: output
       description: BWA matches File
-      type: local-folder
+      type: local-file
       download: true
