@@ -1,0 +1,14 @@
+id: bwa
+name: BWA
+version: 0.7.3a--h577a1d6_10
+workflow:
+  steps:
+    - name: Running BWA
+      type: docker
+      image: 
+      cmd: bwa index ${reference}
+  inputs:
+    - id: reference
+      description: Fasta file
+      type: local-file
+      accept: .fasta,.fa
