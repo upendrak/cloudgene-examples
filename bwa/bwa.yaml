@@ -20,8 +20,6 @@ workflow:
       description: Fastq file
       type: local-file
       accept: .fastq,.fq
-    - id: matches
-      description: Matches file
   outputs:
     - id: bwa_matches
       description: BWA matches File
