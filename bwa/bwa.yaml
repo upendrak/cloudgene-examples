@@ -24,6 +24,6 @@ workflow:
     - id: bwa_matches
       description: BWA matches File
       type: local-file
-      path: output/bwa_matches.txt
+      path: ${output}/bwa_matches.txt
       download: true
 
