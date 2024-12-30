@@ -10,7 +10,7 @@ workflow:
     - name: Fast-mapping BWA
       type: docker
       image: quay.io/biocontainers/bwa:0.7.3a--h577a1d6_10
-      cmd: bwa fastmap ${reference} ${fastq} > ${output}/bwa_matches.txt
+      cmd: bwa fastmap ${reference} ${fastq} > ${matches}
   inputs:
     - id: reference
       description: Reference file
@@ -20,10 +20,12 @@ workflow:
       description: Fastq file
       type: local-file
       accept: .fastq,.fq
+    - id: matches
+      description: Matches file
   outputs:
     - id: bwa_matches
       description: BWA matches File
       type: local-file
-      path: ${output}/bwa_matches.txt
+      path: ${matches}
       download: true
 
